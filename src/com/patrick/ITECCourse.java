@@ -32,7 +32,7 @@ public class ITECCourse {
             System.out.println(student);
         }
         //System.out.println("There are " + getNumberOfStudents() + " students enrolled");
-        System.out.println("The class meets in " + roomNumber );
+        System.out.println("The class meets in room number " + roomNumber );
         System.out.println("The max number of students that can enroll in this course is " + this.maxStudents);
     }
     public String getRoomNumber() {
