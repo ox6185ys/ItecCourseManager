@@ -3,13 +3,13 @@ import java.util.ArrayList;
 /**
  * Created by Patrick on 3/13/2016.
  */
-public class ITECCourse {
+public class ITECCourse {//Set private elements for ITECCourse Class.
     private String name;
     private int code;
     private ArrayList <String> students;
     private int maxStudents;
     private String roomNumber;
-    //Constructor
+    //Constructorfor ITECCourse.
     ITECCourse(String courseName, int courseCode, int courseMaxStudents, String roomNumber)
     {
         this.name = courseName;
@@ -21,10 +21,15 @@ public class ITECCourse {
     public void addStudent(String studentName)
     {
         //don't need to check if students ArrayList is null –
-        //we know that the constructor set it up
+        //we know that the constructor set it up -- Clara Comments.
         students.add(studentName);
     }
-    public void writeCourseInfo() {
+
+    public int availableSeats()//Method for course availability in ITECCourseManager Class
+    {
+        return (maxStudents - students.size());
+    }
+    public void writeCourseInfo() {//Display Course Details.
         System.out.println("Course Name: " + this.name);
         System.out.println("Course Code: " + this.code);
         System.out.println("Students enrolled:");
@@ -35,10 +40,9 @@ public class ITECCourse {
         System.out.println("The class meets in room number " + roomNumber );
         System.out.println("The max number of students that can enroll in this course is " + this.maxStudents);
     }
-    public String getRoomNumber() {
-        return roomNumber;
-    }
-    public void setRoomNumber(String roomNumber) {
-        this.roomNumber = roomNumber;
+    //Return the total to ITECCourse Class.
+    public String getName()
+    {
+        return name;
     }
 }

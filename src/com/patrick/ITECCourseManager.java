@@ -1,10 +1,11 @@
 package com.patrick;
+import java.util.ArrayList;
 /**
  * Created by Patrick on 3/13/2016.
  */
 public class ITECCourseManager {
     public static void main(String args[]) {
-
+        //ITECCourse Constructor for 3 courses.
         ITECCourse maintenanceCourse = new ITECCourse("Microcomputer Systems Maintenance", 1310, 20, "50");
 
         maintenanceCourse.addStudent("Anna");
@@ -24,6 +25,18 @@ public class ITECCourseManager {
         infoTechConceptsCourse.addStudent("Nancy");
         infoTechConceptsCourse.addStudent("Orson");
         infoTechConceptsCourse.writeCourseInfo();
+        //Assemble ArrayList to get availability.
+        ArrayList <ITECCourse> allCourses = new ArrayList <ITECCourse>();
+        allCourses.add(maintenanceCourse);
+        allCourses.add(datacomCourse);
+        allCourses.add(infoTechConceptsCourse);
+
+        for (ITECCourse course : allCourses)
+        {
+            System.out.println(course.getName());
+            System.out.println(course.availableSeats());
+        }
+
 
     }
 }
